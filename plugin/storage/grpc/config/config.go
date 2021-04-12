@@ -46,7 +46,7 @@ type PluginBuilder interface {
 // Build instantiates a PluginServices
 func (c *Configuration) Build() (*ClientPluginServices, error) {
 	// #nosec G204
-	cmd := exec.Command(c.PluginBinary, "--config", c.PluginConfigurationFile)
+	cmd := exec.Command(c.PluginBinary, "--config.file", c.PluginConfigurationFile)
 
 	client := plugin.NewClient(&plugin.ClientConfig{
 		HandshakeConfig: shared.Handshake,
